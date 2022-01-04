@@ -1,0 +1,33 @@
+{
+  "name": "count-actions-users",
+  "version": "0.0.1",
+  "description": "Simple service that keeps track of Github Actions user counts",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geritol/count-actions-users.git"
+  },
+  "author": "Gergo Tolnai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geritol/count-actions-users/issues"
+  },
+  "homepage": "https://github.com/geritol/count-actions-users#readme",
+  "dependencies": {
+    "next": "^12.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "eslint": "8.6.0",
+    "eslint-config-next": "12.0.7",
+    "typescript": "^4.5.4"
+  }
+}
