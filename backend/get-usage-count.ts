@@ -23,7 +23,7 @@ export const getUsageCount = async (owner: string, repo: string) => {
   });
   const result = await octokit
     .request("GET /search/code", {
-      q: `${owner}/${repo} language:YAML path:.github/workflows`,
+      q: `${owner}/${repo} language:YAML`,
       per_page: 1,
     })
     .catch((error) => error);
