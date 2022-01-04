@@ -28,7 +28,7 @@ const handler: NextApiHandler = (req, res) => {
     label: "used by",
     message: "420",
     color: "blue",
-    logoName: "githubactions",
+    namedLogo: "githubactions",
     logoColor: "#fff",
   });
 };
