@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Navbar from "../../frontend/components/Navbar";
 import Shield from "../../frontend/components/Shield";
-import { getActionUrl } from "../../frontend/urls";
+import { getRepoUrl } from "../../frontend/urls";
 
 function ActionStats() {
   const router = useRouter();
@@ -11,11 +11,11 @@ function ActionStats() {
       <Navbar />
       <main>
         <h2>
-          <a href={getActionUrl(user, repo)}>
+          <a href={getRepoUrl(user, repo)}>
             {user}/{repo}
           </a>
-        </h2>{" "}
-        is <Shield user={user} repo={repo} /> users
+        </h2>
+        <Shield user={user} repo={repo} />
       </main>
     </div>
   );
