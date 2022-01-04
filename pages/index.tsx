@@ -5,7 +5,7 @@ function HomePage() {
     <div>
       <h1>User count badges for your Github Actions</h1>
       <p>Display the user count of your Github Actions with a simple badge</p>
-      <h3>Examples</h3>
+      <h2>Examples</h2>
       <ul>
         <li>
           <a href="https://github.com/geritol/match-tag-to-package-version">

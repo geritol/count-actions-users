@@ -24,7 +24,7 @@ function Generate() {
 
   return (
     <div>
-      <h3>Generate badge</h3>
+      <h2>Generate badge</h2>
       <input value={value} onChange={handleChange}></input>
       {!isValid && (
         <div>Please provide Github Action in `owner/repo` format</div>
@@ -35,7 +35,7 @@ function Generate() {
             <img alt={`${value} user count`} src={getShieldUrl(user, repo)} />
           </a>
 
-          <h4>Markdown</h4>
+          <h3>Markdown</h3>
           <pre>
             <code>
               [![{value} user count]({getShieldUrl(user, repo)})](
@@ -43,7 +43,7 @@ function Generate() {
             </code>
           </pre>
 
-          <h4>HTML</h4>
+          <h3>HTML</h3>
           <pre>
             <code>
               {`<a href="${getActionUrl(user, repo)}">
