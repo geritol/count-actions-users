@@ -8,7 +8,9 @@ function HomePage() {
       <Navbar />
       <main>
         <h1>User count badges for your Github Actions</h1>
-        <p>Display the user count of your Github Actions with a simple badge</p>
+        <p className="text-lg">
+          Display the user count of your Github Actions with a simple badge
+        </p>
         <h2>Examples</h2>
         <ul>
           <li>

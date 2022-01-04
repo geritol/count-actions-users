@@ -6,6 +6,7 @@ function Shield(props: { user: string; repo: string }) {
     <img
       alt={`${repoPath} user count`}
       src={getShieldUrl(props.user, props.repo)}
+      className="inline-block"
     />
   );
 }
