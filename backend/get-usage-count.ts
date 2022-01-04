@@ -1,5 +1,12 @@
 import { Octokit } from "@octokit/core";
 
+const getAccessToken = () => {
+  // Github API rate limits searches at 30 per minute
+  // we use multiple access tokens and always use a random one
+  const accessTokens = JSON.parse(process.env.ACCESS_TOKENS);
+  return accessTokens[Math.floor(Math.random() * accessTokens.length)];
+};
+
 const formatCount = (count: number) => {
   if (count < 10000) {
     return `${count}`;
@@ -12,7 +19,7 @@ const formatCount = (count: number) => {
 
 export const getUsageCount = async (owner: string, repo: string) => {
   const octokit = new Octokit({
-    auth: process.env.ACCESS_TOKEN,
+    auth: getAccessToken(),
   });
   const result = await octokit
     .request("GET /search/code", {
