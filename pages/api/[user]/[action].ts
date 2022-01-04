@@ -1,6 +1,7 @@
 import { NextApiHandler } from "next";
+import { getUsageCount } from "../../../backend/get-usage-count";
 
-const handler: NextApiHandler = (req, res) => {
+const handler: NextApiHandler = async (req, res) => {
   if (req.method !== "GET") {
     res.status(405).end();
     return;
@@ -23,10 +24,12 @@ const handler: NextApiHandler = (req, res) => {
     return;
   }
 
+  const usageCount = await getUsageCount(user, action);
+
   return res.json({
     schemaVersion: 1,
     label: "used by",
-    message: "420",
+    message: usageCount,
     color: "blue",
     namedLogo: "githubactions",
     logoColor: "#fff",
