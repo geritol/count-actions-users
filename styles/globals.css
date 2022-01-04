@@ -39,11 +39,11 @@ pre {
 }
 
 main {
-  @apply max-w-3xl mx-auto pt-4 pb-12 px-4;
+  @apply max-w-3xl mx-auto pt-2 pb-12 px-4;
 }
 
 @media (min-width: 768px) {
   main {
-    @apply md:px-1;
+    @apply px-1 pt-4;
   }
 }
