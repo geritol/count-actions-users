@@ -1,17 +1,15 @@
 import Link from "next/link";
-import { getShieldUrl } from "./Generate";
+import { getActionUrl } from "../urls";
+import Shield from "./Shield";
 
 function Example(props: { user: string; repo: string }) {
   const repoPath = `${props.user}/${props.repo}`;
   return (
     <>
-      <a href={`https://github.com/${repoPath}`}>{repoPath}</a>{" "}
+      <a href={getActionUrl(props.user, props.repo)}>{repoPath}</a>{" "}
       <Link href={`/${repoPath}`}>
         <a>
-          <img
-            alt={`${repoPath} user count`}
-            src={getShieldUrl(props.user, props.repo)}
-          />
+          <Shield {...props} />
         </a>
       </Link>
     </>

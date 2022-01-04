@@ -12,19 +12,19 @@ const handler: NextApiHandler = async (req, res) => {
     return;
   }
 
-  const { user, action } = req.query;
+  const { user, repo } = req.query;
 
   if (typeof user !== "string") {
     res.status(400).json({ error: "Github user must be provided" });
     return;
   }
 
-  if (typeof action !== "string") {
-    res.status(400).json({ error: "Github action must be provided" });
+  if (typeof repo !== "string") {
+    res.status(400).json({ error: "Repository must be provided" });
     return;
   }
 
-  const usageCount = await getUsageCount(user, action);
+  const usageCount = await getUsageCount(user, repo);
 
   return res.json({
     schemaVersion: 1,

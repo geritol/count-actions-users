@@ -1,16 +1,5 @@
 import { useState } from "react";
-
-const siteUrl = "https://actions.geritol.tech";
-
-const getActionUrl = (user: string, repo: string) => {
-  return `${siteUrl}/${user}/${repo}`;
-};
-export const getShieldUrl = (user: string, repo: string) => {
-  const apiUrl = `${siteUrl}/api/${user}/${repo}?format=shields.io`;
-  return `https://img.shields.io/endpoint?url=${encodeURIComponent(
-    apiUrl
-  )}&cacheSeconds=3600`;
-};
+import { getActionUrl, getShieldUrl } from "../urls";
 
 function Generate() {
   const [value, setValue] = useState("actions/checkout");
@@ -23,6 +12,8 @@ function Generate() {
   };
 
   const [user, repo] = value.split("/");
+  const actionUrl = getActionUrl(user, repo);
+  const shieldUrl = getShieldUrl(user, repo);
 
   return (
     <div>
@@ -33,25 +24,25 @@ function Generate() {
       )}
       {isValid && (
         <div>
-          <a href={getActionUrl(user, repo)}>
-            <img alt={`${value} user count`} src={getShieldUrl(user, repo)} />
+          <a href={actionUrl}>
+            <img alt={`${value} user count`} src={shieldUrl} />
           </a>
 
           <h3>Markdown</h3>
           <pre>
             <code>
-              [![{value} user count]({getShieldUrl(user, repo)})](
-              {getActionUrl(user, repo)})
+              [![{value} user count]({shieldUrl})](
+              {actionUrl})
             </code>
           </pre>
 
           <h3>HTML</h3>
           <pre>
             <code>
-              {`<a href="${getActionUrl(user, repo)}">
+              {`<a href="${actionUrl}">
   <img
     alt="${value} user count"
-    src="${getShieldUrl(user, repo)}"
+    src="${shieldUrl}"
     />
 </a>`}
             </code>
