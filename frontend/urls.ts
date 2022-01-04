@@ -5,6 +5,10 @@ export const getRepoUrl = (user: string, repo: string) => {
   return `${githubUrl}/${user}/${repo}`;
 };
 
+export const getUsersSearchUrl = (user: string, repo: string) => {
+  return `${githubUrl}/search?l=YAML&q=${user}%2F${repo}&type=Code`;
+};
+
 export const getActionUrl = (user: string, repo: string) => {
   return `${siteUrl}/${user}/${repo}`;
 };
