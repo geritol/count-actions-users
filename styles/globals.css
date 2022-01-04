@@ -39,7 +39,7 @@ pre {
 }
 
 main {
-  @apply max-w-3xl mx-auto pt-4 pb-12 px-2;
+  @apply max-w-3xl mx-auto pt-4 pb-12 px-4;
 }
 
 @media (min-width: 768px) {
