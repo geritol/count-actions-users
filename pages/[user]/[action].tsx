@@ -1,11 +1,15 @@
 import { useRouter } from "next/router";
+import Navbar from "../../frontend/components/Navbar";
 
 function ActionStats() {
   const router = useRouter();
   const { user, action } = router.query;
   return (
     <div>
-      Action stats for {user}/{action}
+      <Navbar />
+      <main>
+        Action stats for {user}/{action}
+      </main>
     </div>
   );
 }
